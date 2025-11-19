@@ -1,0 +1,23 @@
+# Node
+node_modules
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# Env
+.env
+
+# Prisma / SQLite
+backend/dev.db
+*.sqlite
+*.sqlite-journal
+
+# Next.js
+frontend/.next
+frontend/out
+
+# Misc
+.DS_Store
+dist
+build

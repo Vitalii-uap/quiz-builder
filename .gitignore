@@ -1,0 +1,23 @@
+# Node
+node_modules
+npm-debug.log*
+yarn-error.log*
+
+# Env
+.env
+
+# Prisma / SQLite
+backend/dev.db
+*.sqlite
+*.sqlite-journal
+
+# Next.js
+frontend/.next
+frontend/out
+
+# Build
+dist
+build
+
+# macOS
+.DS_Store

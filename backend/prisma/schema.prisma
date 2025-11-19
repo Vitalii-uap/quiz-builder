@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Quiz {
+  id        Int        @id @default(autoincrement())
+  title     String
+  createdAt DateTime   @default(now())
+  questions Question[]
+
+  @@map("quizzes")
+}
+
+model Question {
+  id            Int      @id @default(autoincrement())
+  quizId        Int
+  questionText  String
+  /// "BOOLEAN" | "INPUT" | "CHECKBOX"
+  questionType  String
+  order         Int
+  correctAnswer String?
+  createdAt     DateTime @default(now())
+  quiz          Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers       Answer[]
+
+  @@map("questions")
+}
+
+model Answer {
+  id         Int      @id @default(autoincrement())
+  questionId Int
+  answerText String
+  isCorrect  Boolean  @default(false)
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("answers")
+}
