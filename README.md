@@ -176,4 +176,13 @@ npm run dev
 
 - The page displays all questions and correct answers
 
-This project uses the legacy pages router. In a real production app I would use the app router (Next.js 13+)
+## Known Limitations / Future Improvements
+
+- **Legacy `pages` router**  
+  The project currently uses the legacy `pages` router. In a real production application I would use the `app` router (Next.js 13+) with server components and more modern routing patterns.
+
+- **Manual validation (no Zod / react-hook-form yet)**  
+  Request and form validation is implemented manually in controllers/services on the backend and directly in React components on the frontend. A better approach would be to introduce a shared schema layer using [Zod](https://github.com/colinhacks/zod) and use it together with `react-hook-form` on the frontend and with the backend DTOs.
+
+- **Inline styles and limited componentization**  
+  Many UI pieces still use inline styles and some logic (e.g. rendering different question types) lives inside a single component. As a next step, this could be refactored into smaller presentational components and shared helpers, and styled using a utility-first framework like Tailwind CSS.
