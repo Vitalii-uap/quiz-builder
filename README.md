@@ -28,13 +28,13 @@ A full-stack application for creating and viewing quizzes.
 
 - Select correct answer: **True / False**
 
-1. **INPUT**
+2. **INPUT**
 
 - Question text
 
 - Free-text correct answer
 
-1. **CHECKBOX**
+3. **CHECKBOX**
 
 - Question text
 
@@ -175,3 +175,5 @@ npm run dev
 - URL format: `http://localhost:3000/quizzes/<id>`
 
 - The page displays all questions and correct answers
+
+This project uses the legacy pages router. In a real production app I would use the app router (Next.js 13+)

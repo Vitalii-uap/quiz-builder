@@ -7,7 +7,9 @@ yarn-error.log*
 .env
 
 # Prisma / SQLite
-backend/dev.db
+backend/prisma/dev.db
+backend/prisma/*.db
+backend/prisma/*.db-journal
 *.sqlite
 *.sqlite-journal
 
